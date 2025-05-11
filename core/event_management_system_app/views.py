@@ -74,7 +74,7 @@ def category_list(request):
         if request.GET.get('name'):
             queryset=queryset.filter(name__icontains=request.GET.get('name'))
         
-        return render(request, 'event_management_system_app/category_list.html',{'events':queryset,'categories':categories})
+        return render(request, 'event_management_system_app/index.html',{'events':queryset,'categories':categories})
 
 
     
@@ -84,7 +84,7 @@ def category_list(request):
 def category_list(request):
         categories = Category.objects.all()
                
-        return render(request, 'event_management_system_app/category_list.html',{'Category':categories})
+        return render(request, 'event_management_system_app/index.html',{'Category':categories})
 '''
 
 def create_category(request):

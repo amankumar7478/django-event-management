@@ -41,7 +41,7 @@ INSTALLED_APPS = [
 ]
 
 EXTERNAL_APPS=[
-    "home",
+    
     "event_management_system_app",
 ]
 
