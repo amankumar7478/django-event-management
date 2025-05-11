@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>login page</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+        
+    </head>
+
+    <body >
+        <div class="container mt-5">
+        <form class="col-6 mx-auto card p-3 shadow-lg" method="post">
+          {% if messages %}
+          {{message.tags}}
+          <div class="alert alert-primary" role="alert">
+            {%for message in messages%}
+            {{message}}
+            {% endfor %}
+          </div>
+         {% endif %}
+             {% csrf_token %}
+            <h2>LOGIN</h2>
+            <hr>
+            <form>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">User name</label>
+                  <input type="text" class="form-control" name="username" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter username">
+                  <small id="emailHelp" class="form-text text-muted">We'll never share your details with anyone else.</small>
+                </div>
+                <div class="form-group">
+                  
+                  <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                </div>  
+                <p>Don't have account <a href="/register/">Register</a> </p>
+            <button type="submit" class="btn btn-primary mt-2">login</button>
+            
+          </form> 
+        </div>
+         
+    
+    </body>
+</html>
